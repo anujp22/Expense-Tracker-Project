@@ -1,28 +1,6 @@
-
-# How to run this in code in your machine
-
-## Follow these steps:
-Open Command Prompt:
-
-Press Windows key, type "cmd", and press Enter. Navigate to Project Directory:
-
-## To create virtual environment
-
-```
-python -m venv myvenv
-```
-
-## To start the environment
-```
-myvenv\Scripts\activate.bat
-```
-
-## To deactivate
-```
-deactivate
-```
+# Expense-Tracker-Project
 ## Download Requirement.txt using following command
 ```
 pip install -r requirements.txt
 ```
-
+Run this command in terminal to install all the required dependancies to run this python program
