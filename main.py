@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -8,6 +8,8 @@ def home():
 
 @app.route("/login")
 def login():
+    user_name = request.form()
+    password = request.form()
     return render_template("login.html")
 
 @app.route('/result')
