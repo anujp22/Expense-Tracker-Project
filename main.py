@@ -8,13 +8,15 @@ def home():
 
 @app.route("/login")
 def login():
-    user_name = request.form()
-    password = request.form()
     return render_template("login.html")
 
 @app.route('/result')
 def result():
     return render_template("result.html")
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template("dashboard.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
