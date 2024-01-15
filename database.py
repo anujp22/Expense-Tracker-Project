@@ -1,19 +1,20 @@
 import psycopg2
+import os
 
-# Connect to the PostgreSQL database
-conn = psycopg2.connect(
-    dbname="your_database_name",
-    user="your_username",
-    password="your_password",
-    host="your_host",
-    port="your_port"
+
+def connect_to_db():
+    try:
+        conn = psycopg2.connect(
+    dbname=os.environ.get("DB_name"),
+    user=os.environ.get("DB_user"),
+    password=os.environ.get("DB_password"),
+    host=os.environ.get("DB_host_name"),
+    port=os.environ.get("DB_port")
 )
+    except Exception as error:
+        print("Unexpected error:", error)
+    return conn
 
-# Create a cursor
-cur = conn.cursor()
-
-# Execute SQL queries
-
-# Close the cursor and connection
-cur.close()
-conn.close()
+def close_db_connection(conn):
+    if conn:
+        conn.close()
