@@ -161,5 +161,5 @@ cython_debug/
 flaskapp/
 
 .env/
-
+.vscode
 DBcreate.py
