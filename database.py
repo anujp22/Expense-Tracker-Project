@@ -2,14 +2,16 @@ import psycopg2
 import os
 conn = None
 cur = None
+
 try:
     conn = psycopg2.connect(
     dbname=os.environ.get("DB_name"),
     user=os.environ.get("DB_user"),
     password=os.environ.get("DB_password"),
-    host=os.environ.get("DB_host"),
+    host=os.environ.get("DB_host_name"),
     port=os.environ.get("DB_port")
 )
+    print("Your connection was successful")
     cur = conn.cursor()
     
     create_script = '''
