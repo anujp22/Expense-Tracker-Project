@@ -1,6 +1,7 @@
-# Flask User Authentication System
+# Expense-Tracker-Project
+*Inprogress
 
-**Flask User Authentication System** is a web application that provides user authentication features, including registration, login, logout, and a simple dashboard. It uses Flask for the backend, and PostgreSQL for the database, and incorporates secure password hashing.
+**Expense Tracker Project** is a web application that provides user authentication features, including registration, login, logout, and a simple dashboard. It uses Flask for the backend, and PostgreSQL for the database, and incorporates secure password hashing. It will handle user inputs based on their expenses and category inputted then processed on the backend.
 
 ## Features
 
@@ -9,6 +10,7 @@
 - **Session Management:** Maintains user sessions for authenticated access to certain routes.
 - **Password Hashing:** Utilizes secure password hashing to protect user credentials.
 - **Dashboard Access:** Users with an active session can access a simple dashboard.
+- **Data Analysis:** Expenses processed and categorized using Data Science Focused Libraries.
 
 ## How to Use
 
