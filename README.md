@@ -1,5 +1,5 @@
 # Expense-Tracker-Project
-## Inprogress
+### In-progress
 
 **Expense Tracker Project** is a web application that provides user authentication features, including registration, login, logout, and a simple dashboard. It uses Flask for the backend, and PostgreSQL for the database, and incorporates secure password hashing. It will handle user inputs based on their expenses and category inputted then processed on the backend.
 
