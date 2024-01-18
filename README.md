@@ -15,40 +15,28 @@
 1. **Clone the Repository:**
    ```bash
    git clone [repository-url]
-
-
 2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
-
-
 3. **Set Environment Variables:**
    `DB_name`: Database name
    `DB_user`: Database user
    `DB_password`: Database password
    `DB_host_name`: Database hostname
    `DB_port`: Database port
-
-   
 4. **Run the Application:**
    ```bash
    python main.py
-
-
 5. **Access the Application:
    Open a web browser and go to http://localhost:5000/
-
-
 ## Requirements
 - Python 3.x
 - Flask 3.0.0
 - Other dependencies in requirements.txt
-
 ## Contributing
 Contributions are welcome! If you'd like to contribute to the project, follow these steps:
 1. Fork the repository
 2. Make your changes
 3. Submit a pull request
-
 ## License
 This project is under the MIT License
