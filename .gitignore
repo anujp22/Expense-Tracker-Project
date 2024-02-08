@@ -163,3 +163,5 @@ flaskapp/
 .env/
 .vscode
 DBcreate.py
+DBtest.py
+templates/test.html

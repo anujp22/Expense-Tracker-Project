@@ -88,9 +88,10 @@ def result():
     if 'loggedin' in session:
         return render_template("result.html")
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['POST','GET'])
 def dashboard():
     if 'loggedin' in session:
+        
         return render_template("dashboard.html")
     else:
         return redirect(url_for('login'))
@@ -98,10 +99,10 @@ def dashboard():
 @app.route('/logout')
 def logout():
 # Remove session data, this will log the user out
-   session.pop('loggedin', None)
-   session.pop('id', None)
-   session.pop('username', None)
-   # Redirect to login page
-   return redirect(url_for('login'))
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('username', None)
+    # Redirect to login page
+    return redirect(url_for('login'))
 if __name__ == "__main__":
     app.run(debug=True)
