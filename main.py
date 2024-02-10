@@ -7,6 +7,14 @@ import re
 app = Flask(__name__)
 
 conn = connect_to_db()
+
+@app.errorhandler(Exception)
+def handle_error(e):
+    return redirect(url_for('error'))
+
+@app.route('/error')
+def error():
+    return render_template("error.html")
 @app.route("/")
 def home():
     #TODO - code the redirection to login form or else so ever for the page
@@ -91,7 +99,21 @@ def result():
 @app.route('/dashboard', methods=['POST','GET'])
 def dashboard():
     if 'loggedin' in session:
-        
+        user_id = session.get('id')
+        cur = conn.cursor()
+        if request.method == 'POST':
+            transaction_dates = request.form.getlist['transaction_date[]']
+            amounts = request.form.getlist('amount[]')
+            categories = request.form.getlist('category[]')
+            transaction_types = request.form.getlist('transaction_type[]')
+            for date, amount, category, transaction_type in zip(transaction_dates,amounts,categories,transaction_types):
+                cur.execute("INSERT INTO transactions(user_id, transaction_date, amount, category, transaction_type) VALUES (%s, %s, %s, %s)",
+                        (user_id, date, amount, category, transaction_type))
+            conn.commit()
+            cur.close()
+            
+            flash("You data has been successfully received!")
+            return redirect(url_for('result'))
         return render_template("dashboard.html")
     else:
         return redirect(url_for('login'))

@@ -165,3 +165,4 @@ flaskapp/
 DBcreate.py
 DBtest.py
 templates/test.html
+templates/error.html
